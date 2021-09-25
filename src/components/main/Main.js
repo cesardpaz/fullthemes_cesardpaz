@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './main.css';
-import {data} from "../assets/db/data.json";
+import {data} from "../../assets/db/data.json";
 import Product from './Product';
 
 const Main = () => {
