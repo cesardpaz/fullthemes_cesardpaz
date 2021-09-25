@@ -1,46 +1,54 @@
-import React from 'react';
+import React from 'react'
 import './navBar.css';
+import CartWidget from './header/CartWidget';
 
-class NavBar extends React.Component {
+function navBar() {
 
-    render() {
-        return (
-            <>
-            <div id="header-wrapper">
-				<header id="header" className="container">
-                    <div id="logo">
-                        <h1><a href="index.html">My Store</a></h1>
-                        <span>with REACT</span>
+    return (
+        <header className="header">
+            <div className="header__top">
+                <div className="container flex-bt p-at">
+                    <div className="header__top__featured">
+                        <nav>
+                            <ul>
+                                <li><a href="#">Address</a></li>
+                                <li><a href="#">Offers</a></li>
+                                <li><a href="#">Coupons && Deals</a></li>
+                            </ul>
+                        </nav>
                     </div>
-                    <nav id="nav">
-                        <ul>
-                            <li className="current"><a href="#">Home</a></li>
-                            <li className="opener">
-                                <a href="#">Contact</a>
-                                <ul className="dropotron level-0 left">
-                                    <li><a href="#">Phone</a></li>
-                                    <li><a href="#">Address</a></li>
-                                    <li><a href="#">Location</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Products</a></li>
-                            <li><a href="#">Categories</a></li>
-                        </ul>
-                    </nav>
-				</header>
-			</div>
-            
-            <div id="navToggle"><a href="#navPanel" className="toggle"></a></div>
-
-            <div id="navPanel">
-                <nav>
-                    <a className="link depth-0" href="#" s><span className="indent-0"></span>Welcome</a>
-                </nav>
+                    <div className="header__top__user">
+                        <nav>
+                            <ul>
+                                <li><a href="">My account</a></li>
+                                <li><a href="">Wishlist</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-            </>
-        );
-    }
 
+            <div className="header__main">
+                <div className="container flex-bt-ac p-at">
+                    <figure>
+                        <img src="https://wpbingosite.com/wordpress/bookio/wp-content/webp-express/webp-images/uploads/2021/08/logo-1.png.webp" />
+                    </figure>
+
+                    <div className="header__search">
+                        <form action="">
+                            <input placeholder="Search product..." type="text" />
+                            <button><i className="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+
+                    <CartWidget />
+                    
+                </div>
+            </div>
+
+            
+        </header>
+    )
 }
 
-export default NavBar
+export default navBar

@@ -1,12 +1,13 @@
-import logo from './template_logo_512.png';
 import './App.css';
-import NavBar from './components/navBar';
+import NavBar from './components/NavBar';
+import Main from './components/Main';
 function App() {
-  return (
-    
-    <NavBar />
-   
-  );
+    return (
+        <>
+            <NavBar />
+            <Main />
+        </>
+    );
 }
 
 export default App;

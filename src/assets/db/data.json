@@ -1,0 +1,62 @@
+{
+    "data": [
+        {
+          "id": "1",
+          "title": "Peril",
+          "author": "Robert Costa",
+          "cover": "https://m.media-amazon.com/images/P/B098PDDZW3.01._SCLZZZZZZZ_SX500_.jpg",
+          "price": 18.00
+        },
+        {
+            "id": "2",
+            "title": "Ugly Love",
+            "author": "Colleen Hoover",
+            "cover": "https://m.media-amazon.com/images/P/1476753180.01._SCLZZZZZZZ_SX500_.jpg",
+            "price": 10.19
+        },
+        {
+            "id": "3",
+            "title": "The Judge's List",
+            "author": "John Grisham",
+            "cover": "https://images-na.ssl-images-amazon.com/images/I/41E3EKUlXGS._SX327_BO1,204,203,200_.jpg",
+            "price": 20.99
+        },
+        {
+            "id": "4",
+            "title": "It Happened One Summer",
+            "author": "Tessa Bailey",
+            "cover": "https://images-na.ssl-images-amazon.com/images/I/51o+cLA760L._SX330_BO1,204,203,200_.jpg",
+            "price": 13.49
+        },
+        
+        {
+            "id": "5",
+            "title": "The Try Not to Laugh Challenge - Would Your Rather?",
+            "author": "Crazy Corey",
+            "cover": "https://images-na.ssl-images-amazon.com/images/I/51o7tQnySSL._SX311_BO1,204,203,200_.jpg",
+            "price": 4.89
+        },
+        {
+            "id": "6",
+            "title": "The Seven Husbands of Evelyn Hugo",
+            "author": "Taylor Jenkins Reid",
+            "cover": "https://images-na.ssl-images-amazon.com/images/I/41FYr12RflL._SX320_BO1,204,203,200_.jpg",
+            "price": 9.42
+        },
+        {
+            "id": "7",
+            "title": "The Wish",
+            "author": "Nicholas Sparks",
+            "cover": "https://images-na.ssl-images-amazon.com/images/I/51NUTi4a5YL._SX328_BO1,204,203,200_.jpg",
+            "price": 15.99
+        },
+        {
+            "id": "8",
+            "title": "The Midnight Library",
+            "author": "Matt Haig",
+            "cover": "https://images-na.ssl-images-amazon.com/images/I/51Ifl1zXhJL._SX329_BO1,204,203,200_.jpg",
+            "price": 13.29
+        }
+       
+    ]
+}
