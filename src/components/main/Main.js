@@ -3,7 +3,9 @@ import './main.css';
 import {data} from "../../assets/db/data.json";
 import Product from './Product';
 
-const Main = () => {
+const Main = ({addProductt}) => {
+
+  
 
     //Create list products
     const[ products, setProducts ] = useState(data);
@@ -25,13 +27,14 @@ const Main = () => {
                         <Product
                             key         = {product.id}
                             product     = {product}
+                            addProductt  = {addProductt}
                         />
                     ))}
                    
                 </div>
             </div>
         </section>
-        <div  onClick={ () => removeOverlay() } className="overlay"></div>
+        <div onClick={ () => removeOverlay() } className="overlay"></div>
         </>
     )
 }

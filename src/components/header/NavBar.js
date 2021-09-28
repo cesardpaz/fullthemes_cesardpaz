@@ -2,7 +2,7 @@ import React from 'react'
 import './navBar.css';
 import CartWidget from './CartWidget';
 
-function navBar() {
+const navBar = ({prodadd}) => {
 
     return (
         <header className="header">
@@ -20,8 +20,8 @@ function navBar() {
                     <div className="header__top__user">
                         <nav>
                             <ul>
-                                <li><a href="">My account</a></li>
-                                <li><a href="">Wishlist</a></li>
+                                <li><a className="fa-user-circle" href="">My account</a></li>
+                                <li><a className="fa-diamond" href="">Wishlist</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -41,7 +41,9 @@ function navBar() {
                         </form>
                     </div>
 
-                    <CartWidget />
+                    <CartWidget
+                        prodadd = {prodadd}
+                    />
                     
                 </div>
             </div>
