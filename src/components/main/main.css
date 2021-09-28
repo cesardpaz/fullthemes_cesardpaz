@@ -8,6 +8,7 @@
   right: 1.5rem;
   padding: 2rem 2rem;
   display: none;
+  min-width: 250px;
 }
 .minicart i {
   font-size: 4rem;
