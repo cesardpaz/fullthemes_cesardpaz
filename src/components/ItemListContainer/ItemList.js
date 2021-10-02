@@ -1,22 +1,21 @@
 import React from 'react';
 
 const Product = ({product, addProductt}) => {
-   
-   
-  
-    let { title, author, cover, price, id } = product;
+
+    let { volumeInfo, id } = product;
+    
+    let title  = volumeInfo.title;
+
+    let author = volumeInfo.authors ? volumeInfo.authors[0] : 'Unknow';
+        
+    let image  = volumeInfo.imageLinks.thumbnail,
+        price  = product.saleInfo.listPrice.amount;
 
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: 'USD',
+        currency: product.saleInfo.listPrice.currencyCode,
     });
 
-  
-    /* if(product.quantity === undefined) product.quantity = 1; */
-   
-    const updateQuantity = (e) => {
-        //product.quantity = parseInt(e.target.value);
-    }
 
     const upProduct = (e) => {
         let quantity = e.target.parentNode.previousSibling;
@@ -39,16 +38,15 @@ const Product = ({product, addProductt}) => {
             e.target.innerHTML = '<i class="fa fa-check-circle" aria-hidden="true"></i>';
 
             const itemProd = {
-                'id': product.id,
-                'title' : title,
-                'author' : author,
+                'id'      : product.id,
+                'title'   : title,
+                'author'  : author,
                 'quantity': num,
-                'price' : price,
-                'cover' : cover,
+                'price'   : price,
+                'cover'   : image,
             }
             
             addProductt(itemProd);
-            //console.log(product);
         }, 1000);
 
         setTimeout( ()=> {
@@ -63,7 +61,7 @@ const Product = ({product, addProductt}) => {
     return (
         <div className="main__wdgt__card">
             <figure>
-                <img src={cover} />
+                <img src={image} />
             </figure>
             <div className="wdgt__card__item">
                 <h2>{title}</h2>
@@ -73,8 +71,7 @@ const Product = ({product, addProductt}) => {
                     <input  
                         name="quantity"
                         type="text" 
-                        defaultValue="1" 
-                        onChange = {updateQuantity}
+                        defaultValue="1"
                     />
                     <div className="wdgt__card__quantity">
                        

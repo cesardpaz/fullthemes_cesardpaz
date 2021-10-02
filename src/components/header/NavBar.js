@@ -2,7 +2,21 @@ import React from 'react'
 import './navBar.css';
 import CartWidget from './CartWidget';
 
-const navBar = ({prodadd}) => {
+const navBar = ({prodadd, setProducts}) => {
+
+    const searchProduct = async (e) => {
+        e.preventDefault();
+        const searchText = e.target.querySelector('input[name="product_text"]').value;
+        const resp = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchText}&printType=books&filter=paid-ebooks&maxResults=40&key=AIzaSyBeFq4xvRQCmajRNIk9sM7tUzY4j-7ORa4`);
+        const res  = await resp.json();
+        
+        if(res.totalItems > 0){
+            const newResult = res.items.filter(item => ( item.volumeInfo.hasOwnProperty('imageLinks') &&  item.saleInfo.hasOwnProperty('listPrice') ) );
+            setProducts(newResult);
+        } else {
+            setProducts('No se encontraron productos');
+        }
+    }
 
     return (
         <header className="header">
@@ -35,9 +49,12 @@ const navBar = ({prodadd}) => {
                     </figure>
 
                     <div className="header__search">
-                        <form action="">
-                            <input placeholder="Search product..." type="text" />
-                            <button><i className="fa fa-search" aria-hidden="true"></i></button>
+                        <form 
+                            id="searchform"
+                            onSubmit={searchProduct}
+                        >
+                            <input name="product_text" placeholder="Search product..." type="text" />
+                            <button type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
                         </form>
                     </div>
 
