@@ -14,7 +14,7 @@ const navBar = ({prodadd, setProducts}) => {
             const newResult = res.items.filter(item => ( item.volumeInfo.hasOwnProperty('imageLinks') &&  item.saleInfo.hasOwnProperty('listPrice') ) );
             setProducts(newResult);
         } else {
-            setProducts('No se encontraron productos');
+            setProducts('No products found**fa fa-frown-o');
         }
     }
 
@@ -44,7 +44,7 @@ const navBar = ({prodadd, setProducts}) => {
 
             <div className="header__main">
                 <div className="container flex-bt-ac p-at">
-                    <figure>
+                    <figure class="logo">
                         <img src="https://wpbingosite.com/wordpress/bookio/wp-content/webp-express/webp-images/uploads/2021/08/logo-1.png.webp" />
                     </figure>
 

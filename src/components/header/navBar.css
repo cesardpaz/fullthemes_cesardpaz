@@ -55,11 +55,11 @@
     padding: 2rem 0rem;
   }
 }
-.header__main figure {
+.header__main figure.logo {
   margin: 0;
   display: flex;
 }
-.header__main figure img {
+.header__main figure.logo img {
   width: 200px;
   height: auto;
 }
@@ -126,46 +126,84 @@
   justify-content: center;
 }
 
+/*minicart*/
+.minicart {
+  background-color: #fff;
+  z-index: 20;
+  position: absolute;
+  top: 100%;
+  right: 1.5rem;
+  padding: 3rem 3rem;
+  display: none;
+}
+.minicart i {
+  font-size: 4rem;
+}
+.minicart h4 {
+  font-size: 2rem;
+  margin: 2.5rem 0 0;
+  font-weight: 400;
+}
 
-
-
-.header__main  .minicart__product {
+.active.minicart {
   display: flex;
   align-items: center;
-  width: 100%;
-  margin-bottom: 15px;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.header__main  .minicart__product:last-child {
+.minicart__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.minicart__items {
+  margin-bottom: 10px;
+}
+.minicart__items:last-child {
   margin-bottom: 0;
 }
-
-.header__main  .minicart__product figure {
-  margin-right: 5px;
-}
-.header__main  .minicart__product img {
+.minicart__item figure {
   width: 50px;
-  height: auto;
 }
-.header__main  .minicart__product h3 {
+.minicart__item .minicart__item__meta {
+  width: 200px;
+  padding: 0 7px;
+}
+.minicart__item .minicart__item__meta h3 {
   font-size: 1.8rem;
   font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 5px;
+  margin: 0 0 5px;
+  color: #064532;
 }
-
-.header__main .minicart__product h4 {
-  font-size: 1.7rem;
+.minicart__item .minicart__item__meta h4 {
+  font-size: 1.3rem;
   font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 5px;
+  margin: 0 0 5px;
+}
+.minicart__item .minicart__item__meta h5 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin: 0;
+}
+.minicart__item .minicart__item__meta h5 .minicart__item__qty {
+  font-size: 1.2rem;
+}
+.minicart__item .minicart__item__meta h5 .minicart__item__price {
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-left: 10px;
+  font-weight: 700;
   color: #f1592b;
 }
-
-.header__main .minicart__product h5 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 0;
-  
+.header__main__shopping .minicart__item .minicart__item__remove {
+  width: 30px;
+  padding: 0;
+  background: transparent;
+  margin: 0;
+  border: none;
+  color: #d9001c;
+}
+.minicart__item .minicart__item__remove i {
+  font-size: 3rem;
 }

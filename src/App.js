@@ -8,7 +8,7 @@ function App() {
     const[ prodadd, saveProdadd  ] = useState([]);
 
     //List of products
-    const[ products, setProducts ] = useState('Loading products');
+    const[ products, setProducts ] = useState('Loading products**fa fa-spinner fa-spin fa-3x fa-fw');
 
     //Function que get products and add 
     const addProductt = (proda) => {

@@ -1,31 +1,3 @@
-
-/*minicart*/
-.minicart {
-  background-color: #fff;
-  z-index: 20;
-  position: absolute;
-  top: 100%;
-  right: 1.5rem;
-  padding: 2rem 2rem;
-  display: none;
-  min-width: 250px;
-}
-.minicart i {
-  font-size: 4rem;
-}
-.minicart h4 {
-  font-size: 2rem;
-  margin: 2.5rem 0 0;
-  font-weight: 400;
-}
-
-.active.minicart {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
 /* Home */
 .main__wdgt__title {
   padding: 0 1.5rem;
@@ -133,7 +105,7 @@
   background-color: transparent;
   border: 0.2rem solid #064532;
   color: #064532;
-  padding: 0rem 0.5rem;
+  padding: 1rem 0.5rem;
   font-size: 1.3rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -143,16 +115,35 @@
   color: #fff;
   background-color: #064532;
 }
+
 .wdgt__card__buy button i {
-  font-size: 20px;
+  font-size: 1.7rem;
 }
 
 .wdgt__card__buy button.active {
     background-color: #5eba7d;
     color: #fff;
-    border: 1px solid #064532;
+    border: 0.1rem solid #064532;
     pointer-events: none;
 }
 
+.no-result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
 
+.no-result h4 {
+  font-size: 3rem;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  font-weight: 400;
+  color: #064532;
+}
 
+.no-result i {
+  font-size: 5rem;
+  color: #064532;
+}

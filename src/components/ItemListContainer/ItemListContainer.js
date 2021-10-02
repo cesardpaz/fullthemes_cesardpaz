@@ -18,7 +18,7 @@ const Main = ({addProductt, setProducts, products}) => {
             const newResult = res.items.filter(item => ( item.volumeInfo.hasOwnProperty('imageLinks') &&  item.saleInfo.hasOwnProperty('listPrice') ) );
             setProducts(newResult);
         } catch(error) {
-            setProducts([]); 
+            setProducts('An error occurred in the request**fa fa-plug'); 
         }
     }, []);
 
@@ -32,7 +32,6 @@ const Main = ({addProductt, setProducts, products}) => {
                 <div className="main__wdgt__list">
 
                     { Array.isArray(products)  ? 
-
                         products.map(product => (
                             <ItemList
                                 key         = {product.id}
@@ -40,15 +39,13 @@ const Main = ({addProductt, setProducts, products}) => {
                                 addProductt = {addProductt}
                             />
                         ))
-
-                        
-
                     : 
-                    
                         <div className="no-result">
-                            <h4>{products}</h4>
+                            <div>
+                                <i className={products.split('**')[1]}></i>
+                            </div>
+                            <h4>{products.split('**')[0]}</h4>
                         </div>
-                    
                     }
 
                 </div>

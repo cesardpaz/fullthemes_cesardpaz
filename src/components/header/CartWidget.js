@@ -30,10 +30,12 @@ const CartWidget = ({ prodadd }) => {
                 
                 
                 { prodadd.map( prod => (
+                    <div className="minicart__items">
                     <ItemProduct 
                         key  = {prod.id}
                         prod = {prod}
                     />
+                    </div>
                 ))}
 
             </div> 
