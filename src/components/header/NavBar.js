@@ -79,7 +79,6 @@ const NavBar = ({prodadd, setProducts, removeProduct}) => {
                         </button>
                         
                         <a
-                            href="javascript:void(0)"
                             type="button" onClick={handleClick} 
                         >
                             <figure>

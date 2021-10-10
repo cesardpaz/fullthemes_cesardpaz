@@ -354,6 +354,7 @@ template {
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 button {
@@ -832,6 +833,13 @@ img {
 .wdgt__card__buy button:hover {
   color: #fff;
   background-color: #064532;
+}
+.wdgt__card__buy button:disabled {
+  pointer-events: none;
+  padding: 0.4rem 0.5rem;
+}
+.wdgt__card__buy button:disabled i {
+  font-size: 2rem;
 }
 
 /* features */

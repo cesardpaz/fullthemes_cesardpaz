@@ -118,6 +118,8 @@
                 border-bottom: none;
             }
         }
+
+        
     }
 
     button {
@@ -135,6 +137,15 @@
         &:hover {
             color: v.$white;
             background-color: v.$green;
+        }
+
+        &:disabled {
+            pointer-events: none;
+            padding: .4rem 0.5rem;
+
+            i {
+                font-size: 2rem;
+            }
         }
     }
 

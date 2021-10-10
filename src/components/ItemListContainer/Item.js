@@ -54,8 +54,7 @@ const Item = ({keyid, productIt, addProductt, formatter }) => {
     return (
         <>
             <div className="main__wdgt__card">
-                <a 
-                    href="javascript:void(0)"
+                <a
                     onClick={() => openBook(keyid)}
                 >
                     <figure>
@@ -63,7 +62,7 @@ const Item = ({keyid, productIt, addProductt, formatter }) => {
                     </figure>
                 </a>
                 <div className="wdgt__card__item">
-                    <h2><a href="javascript:void(0)" onClick={() => openBook(keyid)}>{title}</a></h2>
+                    <h2><a onClick={() => openBook(keyid)}>{title}</a></h2>
                     <h3>By <span>{author}</span></h3>
                     <h4>{formatter.format(price)}</h4>
                     <div className="wdgt__card__buy">
