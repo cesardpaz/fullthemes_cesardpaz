@@ -1,7 +1,15 @@
-import './App.css';
+import './assets/css/app.css';
 import React, {useState} from 'react';
 import NavBar from './components/header/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Switch
+  } from "react-router-dom";
+
 function App() {
 
     //Create state of productos añadidos
@@ -25,18 +33,54 @@ function App() {
         }
     }
 
+    const removeProduct = (key) => {
+        const newDat   = prodadd.filter(obj => obj.id != key);
+        saveProdadd([ ... newDat ]); 
+    }
+
 
     return (
         <>
-            <NavBar 
-                prodadd = { prodadd }
-                setProducts = { setProducts }
-            />
-            <ItemListContainer 
-                addProductt = { addProductt }
-                setProducts = { setProducts }
-                products = { products }
-            />
+
+            <Router>
+                <Switch>
+                    
+                    <Route exact path="/">
+                        <NavBar 
+                            prodadd = { prodadd }
+                            setProducts = { setProducts }
+                            removeProduct = { removeProduct }
+                        />
+
+                        <ItemListContainer 
+                            addProductt = { addProductt }
+                            setProducts = { setProducts }
+                            products = { products }
+                        />
+                    </Route>
+
+                    <Route path="/book">
+                        <NavBar 
+                            prodadd = { prodadd }
+                            setProducts = { setProducts }
+                            removeProduct = { removeProduct }
+                        />
+                        <ItemDetailContainer/>
+                    </Route>
+
+                    <Route>
+                        <NavBar 
+                            prodadd = { prodadd }
+                            setProducts = { setProducts }
+                            removeProduct = { removeProduct }
+                        />
+                        Not found
+                    </Route>
+
+                </Switch>
+            </Router>
+
+            
         </>
     );
 }

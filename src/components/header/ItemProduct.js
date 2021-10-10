@@ -1,14 +1,18 @@
 import React from 'react'
 
-const ItemProduct = ({prod}) => {
+const ItemProduct = ({prod, removeProduct}) => {
 
+    const {id, title, author, cover, price, quantity, currency} = prod;
+    
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
-        currency: 'USD',
+        currency: currency,
     });
-    
-    const {title, author, cover, price, quantity} = prod;
 
+    const removeItem = () => {
+        removeProduct(id);
+    }
+    
     return (
             
         <div className="minicart__item">
@@ -18,7 +22,10 @@ const ItemProduct = ({prod}) => {
                 <h4 className="truncate">{author}</h4>
                 <h5><span className="minicart__item__qty">Qty:</span> {quantity} <span className="minicart__item__price">{formatter.format(price)}</span></h5>
             </div>
-            <button className="minicart__item__remove">
+            <button
+                onClick = {removeItem}
+                className="minicart__item__remove"
+            >
                 <i className="fa fa-times-circle-o" aria-hidden="true"></i>
             </button>
         </div>

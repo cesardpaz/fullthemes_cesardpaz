@@ -1,0 +1,46 @@
+@use '././base/variables' as v;
+
+.booksng{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.booksng__image {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 2rem;
+    img {
+        width:100%;
+        height: auto;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 200px;
+        margin-bottom: 0;
+    }
+}
+
+.booksng__meta {
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        width: calc(100% - 200px);
+        padding-left: 3rem;
+    }
+}
+
+.booksng__detail {
+
+    margin-bottom: 2rem;
+    
+    h3 {
+        font-size: 1.6rem;
+        margin: 0 0 0.5rem;
+        color: v.$green;
+        font-weight: 700;
+    }
+
+    p {
+        font-size: 1.6rem;
+        margin: 0;
+    }
+}

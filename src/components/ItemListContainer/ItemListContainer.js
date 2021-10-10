@@ -1,17 +1,23 @@
 import React, {useState, useEffect} from 'react';
-import './itemlistcontainer.css';
 import ItemList from './ItemList';
+import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 
 const Main = ({addProductt, setProducts, products}) => {
 
     const removeOverlay = () => {
         document.querySelector('.minicart').classList.remove('active');
         document.querySelector('.overlay').classList.remove('active');
+        document.querySelector('.header__top').classList.remove('on');
     }
 
+    window.addEventListener('resize',(event) => {
+        document.querySelector('.header__top').classList.remove('on');
+        document.querySelector('.overlay').classList.remove('active');
+        document.querySelector('.minicart').classList.remove('active');
+    });
+
     
-    useEffect(async () => {
-        
+    useEffect(async () => { 
         try {
             const resp = await fetch('https://www.googleapis.com/books/v1/volumes?q=subject:chess&printType=books&filter=paid-ebooks&maxResults=40&key=AIzaSyBeFq4xvRQCmajRNIk9sM7tUzY4j-7ORa4');
             const res  = await resp.json();
@@ -51,7 +57,9 @@ const Main = ({addProductt, setProducts, products}) => {
                 </div>
             </div>
         </section>
+        
         <div onClick={ () => removeOverlay() } className="overlay"></div>
+        
         </>
     )
 }

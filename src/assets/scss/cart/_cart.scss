@@ -1,0 +1,90 @@
+@use '././base/variables' as v;
+
+/*minicart*/
+.minicart {
+    background-color: v.$white;
+    z-index: 20;
+    position: absolute;
+    top: 120%;
+    right: 1.5rem;
+    padding: 3rem 3rem;
+    display: none;
+    border-radius: 0.6rem;
+    i {
+        font-size: 4rem;
+    }
+
+    h4 {
+        font-size: 2rem;
+        margin: 2.5rem 0 0;
+        font-weight: 400;
+    }
+}
+
+.active.minicart {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.minicart__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+    figure {
+        width: 50px;
+    }
+
+    .minicart__item__meta{
+        width: 200px;
+        padding: 0 7px;
+        
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin: 0 0 5px;
+            color: v.$green;
+        }
+        h4 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin: 0 0 5px;
+        }
+        h5 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin: 0;
+            .minicart__item__qty{
+                font-size: 1.2rem;
+            }
+            .minicart__item__price {
+                font-size: 1.5rem;
+                display: inline-block;
+                margin-left: 10px;
+                font-weight: 700;
+                color: v.$orange;
+            }
+        }
+    }
+
+    
+
+    .minicart__item__remove {
+        width: 30px;
+        padding: 0;
+        background: transparent;
+        margin: 0;
+        border: none;
+        color: v.$red;
+        i {
+            font-size: 3rem;
+        }
+    }
+}
+

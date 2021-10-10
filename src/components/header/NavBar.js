@@ -1,8 +1,14 @@
 import React from 'react'
-import './navBar.css';
 import CartWidget from './CartWidget';
+import { useHistory} from 'react-router-dom';
+import MiniCart from './MiniCart';
 
-const navBar = ({prodadd, setProducts}) => {
+const NavBar = ({prodadd, setProducts, removeProduct}) => {
+
+    let history = useHistory();
+
+    const overlay = document.querySelector('.overlay'),
+          menu    = document.querySelector('.header__top');
 
     const searchProduct = async (e) => {
         e.preventDefault();
@@ -18,10 +24,24 @@ const navBar = ({prodadd, setProducts}) => {
         }
     }
 
+    const openMenuMobile = (e) => {
+        if(menu.classList.contains('on'))  {
+            menu.classList.remove('on');
+            overlay.classList.remove('active');
+        } else {
+            menu.classList.add('on');
+            overlay.classList.add('active');
+        }
+    }
+
+    function handleClick() {
+        history.push("/");
+      }
+
     return (
-        <header className="header">
+        <header className="header box_shadow">
             <div className="header__top">
-                <div className="container flex-bt p-at">
+                <div className="container cnt_top flex-bt p-at">
                     <div className="header__top__featured">
                         <nav>
                             <ul>
@@ -39,14 +59,35 @@ const navBar = ({prodadd, setProducts}) => {
                             </ul>
                         </nav>
                     </div>
+                    <div className="header__search">
+                        <form action="">
+                            <input placeholder="Search product..." type="text" />
+                            <button><i className="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
                 </div>
             </div>
 
             <div className="header__main">
                 <div className="container flex-bt-ac p-at">
-                    <figure class="logo">
-                        <img src="https://wpbingosite.com/wordpress/bookio/wp-content/webp-express/webp-images/uploads/2021/08/logo-1.png.webp" />
-                    </figure>
+                    <div className="flex flex_ac">
+                        <button 
+                            className="menu_toggle"
+                            onClick={openMenuMobile}
+                        >
+                            <i className="fa fa-bars" aria-hidden="true"></i>
+                        </button>
+                        
+                        <a
+                            href="javascript:void(0)"
+                            type="button" onClick={handleClick} 
+                        >
+                            <figure>
+                                <img src="https://wpbingosite.com/wordpress/bookio/wp-content/webp-express/webp-images/uploads/2021/08/logo-1.png.webp" />
+                            </figure>
+                        </a>
+                    </div>
+                    
 
                     <div className="header__search">
                         <form 
@@ -61,6 +102,11 @@ const navBar = ({prodadd, setProducts}) => {
                     <CartWidget
                         prodadd = {prodadd}
                     />
+
+                    <MiniCart
+                        prodadd = {prodadd}
+                        removeProduct = {removeProduct}
+                    />
                     
                 </div>
             </div>
@@ -70,4 +116,4 @@ const navBar = ({prodadd, setProducts}) => {
     )
 }
 
-export default navBar
+export default NavBar

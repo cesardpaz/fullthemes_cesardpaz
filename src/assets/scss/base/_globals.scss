@@ -1,0 +1,81 @@
+@use 'variables' as s;
+
+/* global */
+*{
+    font-family: s.$font;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+}
+button {
+    background-color: transparent;
+    border: none;
+}
+
+body {
+    background-color: #f8f8f8;
+    
+}
+img{
+    max-width: 100%;
+}
+.container {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.flex-bt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-bt-ac {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.p-at {
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+}
+
+.overlay {
+    position: fixed;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(0,0,0,.4);
+    display: none;
+}
+
+.overlay.active{
+    display: block;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box_shadow {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex_ac{
+    align-items: center;
+}
