@@ -349,7 +349,6 @@ template {
 * {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
-  font-size: 62.5%;
 }
 
 a {
@@ -362,8 +361,13 @@ button {
   border: none;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   background-color: #f8f8f8;
+  font-size: 1.6rem;
 }
 
 img {
@@ -632,6 +636,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 0;
 }
 
 /*minicart*/
@@ -1022,4 +1027,113 @@ input:checked + .slide:before {
 .booksng__detail p {
   font-size: 1.6rem;
   margin: 0;
+}
+
+.price__single {
+  font-size: 2.2rem;
+  color: #f1592b;
+  margin: 0;
+  margin: 0 0 1rem;
+}
+
+.cathome__cnt {
+  padding: 0 1.5rem;
+}
+.cathome__cnt a {
+  background-color: #fff;
+  font-size: 1.4rem;
+  padding: 0.7rem 1.5rem;
+  margin-left: 0.3rem;
+  border-radius: 0.5rem;
+  color: #6e6e6e;
+  border: 0.1rem solid #f3f3f3;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+.cathome__cnt a:hover {
+  background-color: #f1592b;
+  color: #fff;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  padding: 0 1.5rem;
+  margin-top: 7.5rem;
+}
+@media screen and (min-width: 600px) {
+  .features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 991px) {
+  .features {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.feature {
+  border: 1px solid #E0E0E0;
+  display: flex;
+  align-items: center;
+  padding: 4rem 2.5rem;
+  justify-content: center;
+}
+@media screen and (min-width: 600px) {
+  .feature {
+    justify-content: flex-start;
+  }
+}
+
+.fa.feature__icon {
+  font-size: 4.5rem;
+  color: #f1592b;
+}
+
+.feature__meta {
+  margin-left: 1.5rem;
+}
+.feature__meta h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #064532;
+}
+.feature__meta p {
+  font-size: 1.3rem;
+  color: #767a79;
+  margin: 0;
+}
+
+.page-404 {
+  margin-top: 10rem;
+}
+.page-404 h1 {
+  color: #EDEDED;
+  text-align: center;
+  font-size: 18rem;
+  margin: 0;
+  text-shadow: -1px 0 #bfc0c0, 0 1px #bfc0c0, 1px 0 #bfc0c0, 0 -1px #bfc0c0;
+}
+@media screen and (min-width: 600px) {
+  .page-404 h1 {
+    font-size: 25rem;
+  }
+}
+.page-404 h3 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #BFC0C0;
+  font-weight: 900;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+@media screen and (min-width: 600px) {
+  .page-404 h3 {
+    font-size: 7rem;
+  }
 }

@@ -1,0 +1,52 @@
+@use '././base/variables' as v;
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    padding: 0 1.5rem;
+    margin-top: 7.5rem;
+
+    @media screen and (min-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: 991px) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+}
+
+.feature{
+    border: 1px solid #E0E0E0;
+    display: flex;
+    align-items: center;
+    padding: 4rem 2.5rem;
+    justify-content: center;
+
+    @media screen and (min-width: 600px) {
+        justify-content: flex-start;
+    }
+}
+
+.fa.feature__icon {
+    font-size: 4.5rem;
+    color: v.$orange;
+}
+
+.feature__meta {
+    margin-left: 1.5rem;
+    h3 {
+        font-size: 2rem;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: .5rem;
+        color: v.$green;
+    }
+
+    p {
+        font-size: 1.3rem;
+        color: v.$gray;
+        margin: 0;
+    }
+}

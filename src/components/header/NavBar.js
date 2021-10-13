@@ -13,7 +13,11 @@ const NavBar = ({prodadd, setProducts, removeProduct}) => {
     const searchProduct = async (e) => {
         e.preventDefault();
         const searchText = e.target.querySelector('input[name="product_text"]').value;
-        const resp = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchText}&printType=books&filter=paid-ebooks&maxResults=40&key=AIzaSyBeFq4xvRQCmajRNIk9sM7tUzY4j-7ORa4`);
+        history.push({
+            pathname: `/search/${searchText}`,
+            state: searchText,
+        });
+       /*  const resp = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${searchText}&printType=books&filter=paid-ebooks&maxResults=40&key=AIzaSyBeFq4xvRQCmajRNIk9sM7tUzY4j-7ORa4`);
         const res  = await resp.json();
         
         if(res.totalItems > 0){
@@ -21,7 +25,7 @@ const NavBar = ({prodadd, setProducts, removeProduct}) => {
             setProducts(newResult);
         } else {
             setProducts('No products found**fa fa-frown-o');
-        }
+        } */
     }
 
     const openMenuMobile = (e) => {
@@ -36,7 +40,11 @@ const NavBar = ({prodadd, setProducts, removeProduct}) => {
 
     function handleClick() {
         history.push("/");
-      }
+    }
+
+    function openPage404() {
+        history.push("/404");
+    }
 
     return (
         <header className="header box_shadow">
@@ -47,7 +55,7 @@ const NavBar = ({prodadd, setProducts, removeProduct}) => {
                             <ul>
                                 <li><a href="#">Address</a></li>
                                 <li><a href="#">Offers</a></li>
-                                <li><a href="#">Coupons && Deals</a></li>
+                                <li><a onClick={openPage404}>404</a></li>
                             </ul>
                         </nav>
                     </div>

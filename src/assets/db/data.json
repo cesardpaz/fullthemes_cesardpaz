@@ -1,62 +1,90 @@
 {
     "data": [
+        
         {
-          "id": "1",
-          "title": "Peril",
-          "author": "Robert Costa",
-          "cover": "https://m.media-amazon.com/images/P/B098PDDZW3.01._SCLZZZZZZZ_SX500_.jpg",
-          "price": 18.00
+          "id": 1,
+          "title": "Science",
+          "slug":"science"
         },
         {
-            "id": "2",
-            "title": "Ugly Love",
-            "author": "Colleen Hoover",
-            "cover": "https://m.media-amazon.com/images/P/1476753180.01._SCLZZZZZZZ_SX500_.jpg",
-            "price": 10.19
+            "id": 2,
+            "title": "Nature",
+            "slug":"nature"
         },
         {
             "id": "3",
-            "title": "The Judge's List",
-            "author": "John Grisham",
-            "cover": "https://images-na.ssl-images-amazon.com/images/I/41E3EKUlXGS._SX327_BO1,204,203,200_.jpg",
-            "price": 20.99
+            "title": "Business & Economics",
+            "slug":"business-economics"
         },
         {
             "id": "4",
-            "title": "It Happened One Summer",
-            "author": "Tessa Bailey",
-            "cover": "https://images-na.ssl-images-amazon.com/images/I/51o+cLA760L._SX330_BO1,204,203,200_.jpg",
-            "price": 13.49
+            "title": "Computers",
+            "slug":"computers"
         },
-        
         {
             "id": "5",
-            "title": "The Try Not to Laugh Challenge - Would Your Rather?",
-            "author": "Crazy Corey",
-            "cover": "https://images-na.ssl-images-amazon.com/images/I/51o7tQnySSL._SX311_BO1,204,203,200_.jpg",
-            "price": 4.89
+            "title": "Mathematics",
+            "slug":"mathematics"
         },
         {
             "id": "6",
-            "title": "The Seven Husbands of Evelyn Hugo",
-            "author": "Taylor Jenkins Reid",
-            "cover": "https://images-na.ssl-images-amazon.com/images/I/41FYr12RflL._SX320_BO1,204,203,200_.jpg",
-            "price": 9.42
+            "title": "Medical",
+            "slug":"medical"
         },
         {
             "id": "7",
-            "title": "The Wish",
-            "author": "Nicholas Sparks",
-            "cover": "https://images-na.ssl-images-amazon.com/images/I/51NUTi4a5YL._SX328_BO1,204,203,200_.jpg",
-            "price": 15.99
+            "title": "Psychology",
+            "slug":"psychology"
         },
         {
             "id": "8",
-            "title": "The Midnight Library",
-            "author": "Matt Haig",
-            "cover": "https://images-na.ssl-images-amazon.com/images/I/51Ifl1zXhJL._SX329_BO1,204,203,200_.jpg",
-            "price": 13.29
+            "title": "Education",
+            "slug":"education"
+        },
+        {
+            "id": "9",
+            "title": "Family",
+            "slug":"family"
+        },
+        {
+            "id": "10",
+            "title": "Social Science",
+            "slug":"social-science"
+        },
+        {
+            "id": "11",
+            "title": "Family & Relationships",
+            "slug":"family-relationships"
+        },
+        {
+            "id": "12",
+            "title": "Religion",
+            "slug":"religion"
+        },
+        {
+            "id": "13",
+            "title": "Literary Criticism",
+            "slug":"literary-criticism"
+        },
+        {
+            "id": "14",
+            "title": "Law",
+            "slug":"law"
+        },
+        {
+            "id": "15",
+            "title": "Political Science",
+            "slug":"political-science"
+        },
+        {
+            "id": "16",
+            "title": "Fiction",
+            "slug":"fiction"
+        },
+        {
+            "id": "17",
+            "title": "Technology & Engineering",
+            "slug":"technology-engineering"
         }
-       
     ]
 }

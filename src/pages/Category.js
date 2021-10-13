@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
-import ItemList from './ItemList';
-import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
-import CategoriesList from '../CategoriesList/CategoriesList';
-import { useHistory } from 'react-router-dom';
-import Spinner from '../Spinner/Spinner';
-import FeaturesHome from '../FeaturesHome/FeaturesHome';
-const Main = ({addProductt, setProducts, products, isLoading, setIsLoading}) => {
+import ItemList from '../components/ItemListContainer/ItemList'
+import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailContainer';
+import CategoriesList from '../components/CategoriesList/CategoriesList';
+import { useLocation } from 'react-router-dom';
+import FeaturesHome from '../components/FeaturesHome/FeaturesHome';
+import Spinner from '../components/Spinner/Spinner';
 
-    
+const Category = ({addProductt, setProducts, products, isLoading, setIsLoading}) => {
+
+    const location = useLocation();
 
     const removeOverlay = () => {
         document.querySelector('.minicart').classList.remove('active');
@@ -21,11 +22,10 @@ const Main = ({addProductt, setProducts, products, isLoading, setIsLoading}) => 
         document.querySelector('.minicart').classList.remove('active');
     });
 
-    
     useEffect(async () => { 
         try {
             setIsLoading(true);
-            const resp = await fetch('https://www.googleapis.com/books/v1/volumes?q=subject:chess&printType=books&filter=paid-ebooks&maxResults=40&key=AIzaSyBeFq4xvRQCmajRNIk9sM7tUzY4j-7ORa4');
+            const resp = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${location.state.slug}:chess&printType=books&filter=paid-ebooks&maxResults=40&key=AIzaSyBeFq4xvRQCmajRNIk9sM7tUzY4j-7ORa4`);
             const res  = await resp.json();
             if(res.totalItems > 0){
                 const newResult = res.items.filter(item => ( item.volumeInfo.hasOwnProperty('imageLinks') &&  item.saleInfo.hasOwnProperty('listPrice') ) );
@@ -42,12 +42,10 @@ const Main = ({addProductt, setProducts, products, isLoading, setIsLoading}) => 
     return (
         <>
         <section className="main">
-            <div className="main__wdgt container">
-                <CategoriesList/>
-            </div>
+           
             <div className="main__wdgt container">
                 <div className="main__wdgt__title">
-                    <h3>Top books</h3>
+                    <h3>{location.state.title}</h3>
                 </div>
                 
                 <div className="main__wdgt__list">
@@ -73,9 +71,8 @@ const Main = ({addProductt, setProducts, products, isLoading, setIsLoading}) => 
                     }
                 </div>
             </div>
-            
+
             <FeaturesHome />
-            
         </section>
         
         <div onClick={ () => removeOverlay() } className="overlay"></div>
@@ -84,4 +81,4 @@ const Main = ({addProductt, setProducts, products, isLoading, setIsLoading}) => 
     )
 }
 
-export default Main;
+export default Category

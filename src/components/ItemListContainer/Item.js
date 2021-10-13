@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Item = ({keyid, productIt, addProductt, formatter }) => {
     
@@ -19,8 +19,7 @@ const Item = ({keyid, productIt, addProductt, formatter }) => {
 
     const openBook = (keyid) => {
         history.push({
-            pathname: '/book',
-            search: `?id=${keyid}`,
+            pathname: `/book/${keyid}`,
             state: productIt,
         });
     }

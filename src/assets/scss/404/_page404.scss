@@ -1,0 +1,27 @@
+.page-404 {
+    margin-top: 10rem;
+    h1 {
+        color: #EDEDED;
+        text-align: center;
+        font-size: 18rem;
+        margin: 0;
+        text-shadow: -1px 0 #bfc0c0, 0 1px #bfc0c0, 1px 0 #bfc0c0, 0 -1px #bfc0c0;
+        @media screen and (min-width: 600px) {
+            font-size: 25rem;
+        }
+    }
+
+    h3 {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: #BFC0C0;
+        font-weight: 900;
+        margin-top: 1rem;
+        margin-bottom: 0;
+        @media screen and (min-width: 600px) {
+            font-size: 7rem;
+        }
+    }
+    
+}

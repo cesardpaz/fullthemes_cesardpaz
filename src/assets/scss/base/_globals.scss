@@ -4,7 +4,6 @@
 *{
     font-family: s.$font;
     box-sizing: border-box;
-    font-size: 62.5%;
 }
 
 a {
@@ -15,10 +14,12 @@ button {
     background-color: transparent;
     border: none;
 }
-
+html { 
+    font-size: 62.5%; 
+}
 body {
     background-color: #f8f8f8;
-    
+    font-size: 1.6rem;
 }
 img{
     max-width: 100%;

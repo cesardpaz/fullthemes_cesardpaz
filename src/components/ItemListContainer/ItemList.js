@@ -17,6 +17,7 @@ const Product = ({product, addProductt}) => {
     });
     
     let productIt = {
+        'id'         : id,
         'title'      : title,
         'author'     : author,
         'image'      : image,
