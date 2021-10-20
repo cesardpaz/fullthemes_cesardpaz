@@ -1149,16 +1149,24 @@ input:checked + .slide:before {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .suscribe-form__content {
   display: flex;
   align-items: center;
-  width: 35rem;
+  justify-content: center;
+  width: 100%;
 }
 .suscribe-form__content i {
   color: #fff;
   font-size: 4rem;
+}
+@media screen and (min-width: 992px) {
+  .suscribe-form__content {
+    width: 35rem;
+    justify-content: flex-start;
+  }
 }
 
 .suscribe-form__titles {
@@ -1178,7 +1186,14 @@ input:checked + .slide:before {
 }
 
 .suscribe-form__form {
-  width: calc(100% - 35rem);
+  width: 100%;
+  margin-top: 3rem;
+}
+@media screen and (min-width: 992px) {
+  .suscribe-form__form {
+    width: calc(100% - 35rem);
+    margin-top: 0;
+  }
 }
 .suscribe-form__form form {
   display: flex;
@@ -1205,6 +1220,21 @@ input:checked + .slide:before {
   margin-left: 1.2rem;
   border-radius: 0.5rem;
   font-size: 1.4rem;
+}
+.suscribe-form__form span {
+  display: none;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+.suscribe-form__form span.active {
+  display: block;
+}
+.suscribe-form__form span.susccess {
+  color: #07e607;
+}
+
+input[error] {
+  border: 1px solid #dc3545;
 }
 
 .footer__cnt {

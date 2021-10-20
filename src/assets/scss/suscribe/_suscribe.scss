@@ -10,15 +10,23 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+
 }
 
 .suscribe-form__content {
     display: flex;
     align-items: center;
-    width: 35rem;
+    justify-content: center;
+    width: 100%;
     i {
         color: v.$white;
         font-size: 4rem;
+    }
+
+    @media screen and (min-width: 992px) {
+        width: 35rem;
+        justify-content: flex-start;
     }
 }
 
@@ -41,7 +49,13 @@
 }
 
 .suscribe-form__form {
-    width: calc(100% - 35rem);
+    width: 100%;
+    margin-top: 3rem;
+
+    @media screen and (min-width: 992px) {
+        width: calc(100% - 35rem);
+        margin-top: 0;
+    }
     form {
         display: flex;
         align-items: center;
@@ -69,4 +83,20 @@
         border-radius: .5rem;
         font-size: 1.4rem;
     }
+
+    span {
+        display: none;
+        font-size: 1.3rem;
+        margin-top: 1rem;
+        &.active{
+            display: block;
+        }
+        &.susccess {
+            color: v.$susccess;
+        }
+    }
+}
+
+input[error] {
+    border: 1px solid #dc3545;
 }
