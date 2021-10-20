@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
+import { useHistory } from 'react-router-dom';
 import ItemList from './ItemList';
 import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 import CategoriesList from '../CategoriesList/CategoriesList';
-import { useHistory } from 'react-router-dom';
 import Spinner from '../Spinner/Spinner';
 import FeaturesHome from '../FeaturesHome/FeaturesHome';
-const Main = ({addProductt, setProducts, products, isLoading, setIsLoading}) => {
+import Suscribe from '../Suscribe/Suscribe';
+import Footer from '../Footer/Footer';
 
-    
+const Main = ({addProductt, setProducts, products, isLoading, setIsLoading}) => {
 
     const removeOverlay = () => {
         document.querySelector('.minicart').classList.remove('active');
@@ -77,8 +78,14 @@ const Main = ({addProductt, setProducts, products, isLoading, setIsLoading}) => 
             <FeaturesHome />
             
         </section>
+
+        
         
         <div onClick={ () => removeOverlay() } className="overlay"></div>
+        
+        <Suscribe/>
+
+        <Footer/>
         
         </>
     )

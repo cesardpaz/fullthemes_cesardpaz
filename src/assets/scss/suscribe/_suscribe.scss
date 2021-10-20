@@ -1,0 +1,72 @@
+@use '././base/variables' as v;
+
+.suscribe {
+    background-color: v.$black-light;
+    margin-top: 3rem;
+}
+
+.suscribe-form {
+    padding: 4rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.suscribe-form__content {
+    display: flex;
+    align-items: center;
+    width: 35rem;
+    i {
+        color: v.$white;
+        font-size: 4rem;
+    }
+}
+
+.suscribe-form__titles {
+    margin-left: 2rem;
+    
+    h3 {
+        color: v.$white;
+        margin: 0 0 .5rem;
+        font-size: 2.4rem;
+    }
+
+    h4 {
+        color: #999;
+        margin: 0;
+        font-weight: 400;
+        font-size: 1.5rem;
+        color: v.$border;
+    }
+}
+
+.suscribe-form__form {
+    width: calc(100% - 35rem);
+    form {
+        display: flex;
+        align-items: center;
+    }
+    input {
+        font-size: 1.3rem;
+        background-color: v.$white;
+        color: v.$black-light;
+        padding: 0 2rem;
+        border-radius: .5rem;
+        height: 4.7rem;
+        border: none;
+        width: 100%;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        color: v.$white;
+        background-color: v.$orange;
+        height: 4.7rem;
+        padding: 0 3rem;
+        margin-left: 1.2rem;
+        border-radius: .5rem;
+        font-size: 1.4rem;
+    }
+}

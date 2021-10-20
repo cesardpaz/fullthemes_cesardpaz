@@ -772,6 +772,7 @@ img {
   font-weight: 400;
   color: #064532;
   margin: 0 0 1rem;
+  word-break: break-all;
 }
 .main__wdgt__card .wdgt__card__item h3 {
   font-weight: 700;
@@ -1135,5 +1136,103 @@ input:checked + .slide:before {
 @media screen and (min-width: 600px) {
   .page-404 h3 {
     font-size: 7rem;
+  }
+}
+
+.suscribe {
+  background-color: #222222;
+  margin-top: 3rem;
+}
+
+.suscribe-form {
+  padding: 4rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.suscribe-form__content {
+  display: flex;
+  align-items: center;
+  width: 35rem;
+}
+.suscribe-form__content i {
+  color: #fff;
+  font-size: 4rem;
+}
+
+.suscribe-form__titles {
+  margin-left: 2rem;
+}
+.suscribe-form__titles h3 {
+  color: #fff;
+  margin: 0 0 0.5rem;
+  font-size: 2.4rem;
+}
+.suscribe-form__titles h4 {
+  color: #999;
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #E0E0E0;
+}
+
+.suscribe-form__form {
+  width: calc(100% - 35rem);
+}
+.suscribe-form__form form {
+  display: flex;
+  align-items: center;
+}
+.suscribe-form__form input {
+  font-size: 1.3rem;
+  background-color: #fff;
+  color: #222222;
+  padding: 0 2rem;
+  border-radius: 0.5rem;
+  height: 4.7rem;
+  border: none;
+  width: 100%;
+}
+.suscribe-form__form input:focus {
+  outline: none;
+}
+.suscribe-form__form button {
+  color: #fff;
+  background-color: #f1592b;
+  height: 4.7rem;
+  padding: 0 3rem;
+  margin-left: 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+}
+
+.footer__cnt {
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.1rem solid #E0E0E0;
+  padding: 3rem 1.5rem;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .footer__cnt {
+    flex-direction: row;
+  }
+}
+.footer__cnt figure {
+  line-height: 0;
+}
+
+.footer__wdgt p {
+  font-size: 1.4rem;
+  margin: 0;
+}
+.footer__wdgt:first-child {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .footer__wdgt:first-child {
+    margin-bottom: 0;
   }
 }
