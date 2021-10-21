@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartContext } from '../../context/CartContext';
 
-const ItemDetail = ({product, addProductt }) => {
+const ItemDetail = ({product}) => {
+
+    const {addItem} = useContext(CartContext);
 
     let{ id, title, author, image, price, currency, description } = product;
 
@@ -35,7 +38,7 @@ const ItemDetail = ({product, addProductt }) => {
                 'cover'   : image,
                 'currency': currency
             }
-            addProductt(itemProd);
+            addItem(itemProd);
         }, 1000);
         setTimeout( ()=> {
             e.target.innerHTML = 'Add to cart';

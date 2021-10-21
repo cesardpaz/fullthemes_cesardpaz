@@ -720,6 +720,18 @@ img {
   font-size: 3rem;
 }
 
+.clear-minicart {
+  margin-top: 2rem;
+}
+.clear-minicart button {
+  color: #fff;
+  width: 100%;
+  border-radius: 0.5rem;
+  background-color: #d9001c;
+  padding: 0.8rem 0.5rem;
+  font-size: 1.4rem;
+}
+
 /* Home */
 .main__wdgt__title {
   padding: 0 1.5rem;

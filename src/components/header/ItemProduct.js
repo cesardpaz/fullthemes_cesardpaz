@@ -20,7 +20,7 @@ const ItemProduct = ({prod, removeProduct}) => {
             <div className="minicart__item__meta">
                 <h3 className="truncate">{title}</h3>
                 <h4 className="truncate">{author}</h4>
-                <h5><span className="minicart__item__qty">Qty:</span> {quantity} <span className="minicart__item__price">{formatter.format(price)}</span></h5>
+                <h5><span className="minicart__item__qty">Qty:</span> {quantity} <span className="minicart__item__price">{formatter.format(price * quantity)}</span></h5>
             </div>
             <button
                 onClick = {removeItem}

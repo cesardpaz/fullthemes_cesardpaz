@@ -1,7 +1,7 @@
 import React from 'react';
 import Item from './Item';
 
-const Product = ({product, addProductt}) => {
+const Product = ({product}) => {
     let { volumeInfo, id } = product;
     
     let title  = volumeInfo.title;
@@ -31,7 +31,6 @@ const Product = ({product, addProductt}) => {
         <Item
             keyid       = {id}
             productIt   = {productIt}
-            addProductt = {addProductt}
             formatter   = {formatter}
         />
     )

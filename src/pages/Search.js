@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 import FeaturesHome from '../components/FeaturesHome/FeaturesHome';
 import Spinner from '../components/Spinner/Spinner';
 
-const Search = ({addProductt, setProducts, products, isLoading, setIsLoading}) => {
+const Search = ({setProducts, products, isLoading, setIsLoading}) => {
 
     const location = useLocation();
 
@@ -61,7 +61,6 @@ const Search = ({addProductt, setProducts, products, isLoading, setIsLoading}) =
                                 <ItemList
                                     key         = {product.id}
                                     product     = {product}
-                                    addProductt = {addProductt}
                                 />
                             ))
                         : 

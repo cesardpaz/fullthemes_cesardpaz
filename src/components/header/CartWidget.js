@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
-const CartWidget = ({ prodadd }) => {
+const CartWidget = () => {
+
+    const {product_cart} = useContext(CartContext);
     
-    let quantityAll = prodadd.reduce((a, b) => ( parseInt(a) + parseInt(b.quantity) ), 0);
+    let quantityAll = product_cart.reduce((a, b) => ( parseInt(a) + parseInt(b.quantity) ), 0);
    
     const activeOverlay = () => {
         if(document.querySelector('.minicart'))document.querySelector('.minicart').classList.add('active');

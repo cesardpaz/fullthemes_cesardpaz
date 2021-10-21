@@ -88,3 +88,15 @@
     }
 }
 
+.clear-minicart {
+    margin-top: 2rem;
+
+    button {
+        color: v.$white;
+        width: 100%;
+        border-radius: .5rem;
+        background-color: v.$red;
+        padding: .8rem .5rem;
+        font-size: 1.4rem;
+    }
+}

@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 
-const Item = ({keyid, productIt, addProductt, formatter }) => {
+const Item = ({keyid, productIt, formatter }) => {
     
     let history = useHistory();
 
     let { title, author, image, price, currency, description} = productIt;
+
+    const {addItem} = useContext(CartContext);
     
     const upProduct = (e) => {
         let quantity = e.target.parentNode.previousSibling;
@@ -40,7 +43,7 @@ const Item = ({keyid, productIt, addProductt, formatter }) => {
                 'cover'   : image,
                 'currency': currency
             }
-            addProductt(itemProd);
+            addItem(itemProd);
         }, 1000);
         setTimeout( ()=> {
             e.target.innerHTML = 'Add to cart';

@@ -8,7 +8,7 @@ import FeaturesHome from '../FeaturesHome/FeaturesHome';
 import Suscribe from '../Suscribe/Suscribe';
 import Footer from '../Footer/Footer';
 
-const Main = ({addProductt, setProducts, products, isLoading, setIsLoading}) => {
+const Main = ({setProducts, products, isLoading, setIsLoading}) => {
 
     const removeOverlay = () => {
         document.querySelector('.minicart').classList.remove('active');
@@ -60,7 +60,6 @@ const Main = ({addProductt, setProducts, products, isLoading, setIsLoading}) => 
                                 <ItemList
                                     key         = {product.id}
                                     product     = {product}
-                                    addProductt = {addProductt}
                                 />
                             ))
                         : 

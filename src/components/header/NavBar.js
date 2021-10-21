@@ -3,7 +3,7 @@ import CartWidget from './CartWidget';
 import { useHistory} from 'react-router-dom';
 import MiniCart from './MiniCart';
 
-const NavBar = ({prodadd, setProducts, removeProduct}) => {
+const NavBar = ({setProducts}) => {
 
     let history = useHistory();
 
@@ -106,14 +106,9 @@ const NavBar = ({prodadd, setProducts, removeProduct}) => {
                         </form>
                     </div>
 
-                    <CartWidget
-                        prodadd = {prodadd}
-                    />
+                    <CartWidget />
 
-                    <MiniCart
-                        prodadd = {prodadd}
-                        removeProduct = {removeProduct}
-                    />
+                    <MiniCart />
                     
                 </div>
             </div>

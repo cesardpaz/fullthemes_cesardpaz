@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 import FeaturesHome from '../components/FeaturesHome/FeaturesHome';
 import Spinner from '../components/Spinner/Spinner';
 
-const Category = ({addProductt, setProducts, products, isLoading, setIsLoading}) => {
+const Category = ({setProducts, products, isLoading, setIsLoading}) => {
 
     const location = useLocation();
 
@@ -57,7 +57,6 @@ const Category = ({addProductt, setProducts, products, isLoading, setIsLoading})
                                 <ItemList
                                     key         = {product.id}
                                     product     = {product}
-                                    addProductt = {addProductt}
                                 />
                             ))
                         : 
