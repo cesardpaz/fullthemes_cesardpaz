@@ -6,7 +6,7 @@ const Item = ({keyid, productIt, formatter }) => {
     
     let history = useHistory();
 
-    let { title, author, image, price, currency, description} = productIt;
+    let { title, author, cover, price, currency, description} = productIt;
 
     const {addItem} = useContext(CartContext);
     
@@ -40,7 +40,8 @@ const Item = ({keyid, productIt, formatter }) => {
                 'author'  : author,
                 'quantity': num,
                 'price'   : price,
-                'cover'   : image,
+                'cover'   : cover,
+                'description' : description,
                 'currency': currency
             }
             addItem(itemProd);
@@ -60,7 +61,7 @@ const Item = ({keyid, productIt, formatter }) => {
                     onClick={() => openBook(keyid)}
                 >
                     <figure>
-                        <img src={image} />
+                        <img src={cover} />
                     </figure>
                 </a>
                 <div className="wdgt__card__item">

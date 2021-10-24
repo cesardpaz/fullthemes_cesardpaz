@@ -1,8 +1,11 @@
 import React, { useContext } from 'react';
 import ItemProduct  from './ItemProduct';
 import { CartContext } from '../../context/CartContext';
+import { useHistory } from 'react-router-dom';
 
 const MiniCart = () => {
+
+    let history = useHistory();
 
     const { product_cart, removeItem, clearAllItems } = useContext(CartContext);
 
@@ -20,6 +23,17 @@ const MiniCart = () => {
 
     const removeAll = (e) => {
         clearAllItems();
+    }
+
+    const goCart = () => {
+
+        document.querySelector('.header__top').classList.remove('on');
+        document.querySelector('.overlay').classList.remove('active');
+        document.querySelector('.minicart').classList.remove('active');
+        
+        history.push({
+            pathname: `/cart`,
+        });
     }
     
     let quantityAll = product_cart.reduce((a, b) => ( parseInt(a) + parseInt(b.quantity) ), 0);
@@ -42,7 +56,15 @@ const MiniCart = () => {
                         />
                     ))}
 
-                   <div className="clear-minicart"><button onClick={ () => removeAll() }>Remove All products</button></div>
+                    <div className="go-cart">
+                       <button onClick={ () => goCart() }>View Cart</button>
+                    </div>
+
+                    <div className="clear-minicart">
+                       <button onClick={ () => removeAll() }>Remove All products</button>
+                    </div>
+
+                    
                 </div>
                 }
             </div> 

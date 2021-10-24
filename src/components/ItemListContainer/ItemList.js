@@ -20,7 +20,7 @@ const Product = ({product}) => {
         'id'         : id,
         'title'      : title,
         'author'     : author,
-        'image'      : image,
+        'cover'      : image,
         'price'      : price,
         'currency'   : currency,
         'description': desc

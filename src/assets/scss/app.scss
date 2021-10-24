@@ -5,6 +5,8 @@
 @use 'home/book';
 @use 'home/cat';
 @use 'home/features';
+@use 'navigation/breadcrumb';
 @use '404/page404';
 @use 'suscribe/suscribe';
+@use 'cart/pagecart';
 @use 'footer/footer';

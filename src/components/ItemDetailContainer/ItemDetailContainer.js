@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
-
+import FeaturesHome from '../FeaturesHome/FeaturesHome';
 const ItemDetailContainer = () => {
     
     const location = useLocation();
@@ -13,6 +13,9 @@ const ItemDetailContainer = () => {
                     product = {location.state}
                 />
             </div>
+
+            <FeaturesHome />
+
         </section>
     )
 }

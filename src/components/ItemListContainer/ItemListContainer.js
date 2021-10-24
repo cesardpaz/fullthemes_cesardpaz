@@ -5,8 +5,6 @@ import ItemDetailContainer from '../ItemDetailContainer/ItemDetailContainer';
 import CategoriesList from '../CategoriesList/CategoriesList';
 import Spinner from '../Spinner/Spinner';
 import FeaturesHome from '../FeaturesHome/FeaturesHome';
-import Suscribe from '../Suscribe/Suscribe';
-import Footer from '../Footer/Footer';
 
 const Main = ({setProducts, products, isLoading, setIsLoading}) => {
 
@@ -81,10 +79,6 @@ const Main = ({setProducts, products, isLoading, setIsLoading}) => {
         
         
         <div onClick={ () => removeOverlay() } className="overlay"></div>
-        
-        <Suscribe/>
-
-        <Footer/>
         
         </>
     )

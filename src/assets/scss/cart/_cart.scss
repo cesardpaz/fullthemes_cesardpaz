@@ -89,14 +89,61 @@
 }
 
 .clear-minicart {
-    margin-top: 2rem;
-
     button {
+        text-transform: uppercase;
         color: v.$white;
         width: 100%;
         border-radius: .5rem;
         background-color: v.$red;
-        padding: .8rem .5rem;
+        padding: 1rem .5rem;
         font-size: 1.4rem;
+    }
+}
+
+.go-cart {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    button {
+        text-transform: uppercase;
+        background-color: #f7f7f7;
+        color: v.$black;
+        width: 100%;
+        border-radius: .5rem;
+        padding: 1rem .5rem;
+        font-size: 1.4rem;
+        border:1px solid v.$border;
+        &:hover {
+            background-color: #efefef;
+        }
+    }
+}
+
+
+.cartEmpty {
+    width: 100%;
+    padding: 0 1.5rem;
+    margin-top: 3rem;
+    flex-direction: column;
+    text-align: center;
+
+    i {
+        font-size: 10rem;
+        color: v.$gray;
+    }
+
+    h2 {
+        font-size: 2.6rem;
+        font-weight: 400;
+    }
+
+    a {
+        padding: 2rem 3.5rem;
+        background-color: v.$orange;
+        color: v.$white;
+        border-radius: .5rem;
+        text-transform: uppercase;
+        margin-top: 2rem;
+        display: inline-block;
+        font-size: 1.5rem;
     }
 }

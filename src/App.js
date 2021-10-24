@@ -1,18 +1,21 @@
-import './assets/css/app.css';
-import React, {useState, useEffect} from 'react';
-import NavBar from './components/header/NavBar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Category from './pages/Category';
-import Page404 from '../../fullthemes_cesardpaz/src/pages/Page404';
-import Search from './pages/Search';
-import CartProvider from './context/CartContext';
+import './assets/css/app.css'
+import React, {useState, useEffect} from 'react'
+import NavBar from './components/header/NavBar'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import Category from './pages/Category'
+import Cart from './pages/Cart'
+import Page404 from '../../fullthemes_cesardpaz/src/pages/Page404'
+import Search from './pages/Search'
+import CartProvider from './context/CartContext'
+import Suscribe from './components/Suscribe/Suscribe'
+import Footer from './components/Footer/Footer'
+
 import {
     BrowserRouter as Router,
     Route,
-    Link,
     Switch
-  } from "react-router-dom";
+} from "react-router-dom";
 
 function App() {
 
@@ -30,7 +33,6 @@ function App() {
                 <CartProvider>
                     <NavBar 
                         setProducts = { setProducts }
-                        
                     />
                     <Switch>
 
@@ -50,22 +52,24 @@ function App() {
 
                         <Route path="/category">
                             <Category
-                                
                                 setProducts = { setProducts }
                                 products = { products }
                                 setIsLoading = {setIsLoading}
                                 isLoading = {isLoading}
                             />
-                        
                         </Route>
 
                         <Route path="/search">
                             <Search 
-                                
                                 setProducts = { setProducts }
                                 products = { products }
                                 setIsLoading = {setIsLoading}
                                 isLoading = {isLoading}
+                            />
+                        </Route>
+
+                        <Route path="/cart">
+                            <Cart
                             />
                         </Route>
 
@@ -74,6 +78,9 @@ function App() {
                         </Route>
 
                     </Switch>
+
+                    <Suscribe/>
+                    <Footer/>
                 </CartProvider>
             </Router>
 

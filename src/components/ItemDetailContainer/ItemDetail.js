@@ -3,9 +3,11 @@ import { CartContext } from '../../context/CartContext';
 
 const ItemDetail = ({product}) => {
 
+    console.log(product)
+
     const {addItem} = useContext(CartContext);
 
-    let{ id, title, author, image, price, currency, description } = product;
+    let{ id, title, author, cover, price, currency, description } = product;
 
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -35,8 +37,9 @@ const ItemDetail = ({product}) => {
                 'author'  : author,
                 'quantity': num,
                 'price'   : price,
-                'cover'   : image,
-                'currency': currency
+                'cover'   : cover,
+                'currency': currency,
+                'description': description
             }
             addItem(itemProd);
         }, 1000);
@@ -56,7 +59,7 @@ const ItemDetail = ({product}) => {
 
                 <div className="booksng__image">
                     <figure>
-                        <img src={image} />
+                        <img src={cover} />
                     </figure>
                 </div>
 
