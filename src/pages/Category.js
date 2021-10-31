@@ -6,10 +6,14 @@ import { useLocation } from 'react-router-dom';
 import FeaturesHome from '../components/FeaturesHome/FeaturesHome';
 import Spinner from '../components/Spinner/Spinner';
 
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../firebase';
+
 const Category = ({setProducts, products, isLoading, setIsLoading}) => {
 
     const location = useLocation();
 
+    console.log(location.state)
     const removeOverlay = () => {
         document.querySelector('.minicart').classList.remove('active');
         document.querySelector('.overlay').classList.remove('active');
@@ -22,22 +26,31 @@ const Category = ({setProducts, products, isLoading, setIsLoading}) => {
         document.querySelector('.minicart').classList.remove('active');
     });
 
-    useEffect(async () => { 
+    useEffect(() => { 
         try {
             setIsLoading(true);
-            const resp = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${location.state.slug}:chess&printType=books&filter=paid-ebooks&maxResults=40&key=AIzaSyBeFq4xvRQCmajRNIk9sM7tUzY4j-7ORa4`);
-            const res  = await resp.json();
-            if(res.totalItems > 0){
-                const newResult = res.items.filter(item => ( item.volumeInfo.hasOwnProperty('imageLinks') &&  item.saleInfo.hasOwnProperty('listPrice') ) );
-                setProducts(newResult);
-            } else {
-                setProducts('No products found**fa fa-frown-o');
+            const requestData = async() => {
+                const res = [];
+                const q = query(collection(db, "products"), where("category", "array-contains", Number(location.state.id)));
+                const items = await getDocs(q);
+                items.forEach((document) => {
+                    res.push({ ...document.data(), id:document.id })
+                })
+
+                if(res.length > 0){
+                    setProducts(res);
+                } else {
+                    setProducts('No products found**fa fa-frown-o');
+                }
+
+                setIsLoading(false);
             }
-            setIsLoading(false);
+            requestData()
+            
         } catch(error) {
-            setProducts('An error occurred in the request**fa fa-plug'); 
+            setIsLoading(false);
         }
-    }, []);
+    }, []); 
 
     return (
         <>

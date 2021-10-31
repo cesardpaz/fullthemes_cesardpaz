@@ -6,9 +6,14 @@ import { useLocation } from 'react-router-dom';
 import FeaturesHome from '../components/FeaturesHome/FeaturesHome';
 import Spinner from '../components/Spinner/Spinner';
 
+import { collection, getDocs, query, orderBy, startAt, endAt } from 'firebase/firestore';
+import { db } from '../firebase';
+
 const Search = ({setProducts, products, isLoading, setIsLoading}) => {
 
     const location = useLocation();
+
+    console.log(location.state)
 
     const removeOverlay = () => {
         document.querySelector('.minicart').classList.remove('active');
@@ -22,26 +27,30 @@ const Search = ({setProducts, products, isLoading, setIsLoading}) => {
         document.querySelector('.minicart').classList.remove('active');
     });
 
-    useEffect(async () => { 
+    useEffect(() => { 
         try {
             setIsLoading(true);
-            const resp = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${location.state}&printType=books&filter=paid-ebooks&maxResults=40&key=AIzaSyBeFq4xvRQCmajRNIk9sM7tUzY4j-7ORa4`);
-            const res  = await resp.json();
+            const requestData = async() => {
+                const res = [];
+                const q = query(collection(db, "products"), orderBy('title'), startAt(location.state), endAt(location.state+'\uf8ff'));
+                const items = await getDocs(q);
+                items.forEach((document) => {
+                    res.push({ ...document.data(), id:document.id })
+                })
 
-            if(res.totalItems > 0){
-                const newResult = res.items.filter(item => ( item.volumeInfo.hasOwnProperty('imageLinks') &&  item.saleInfo.hasOwnProperty('listPrice') ) );
-                setProducts(newResult);
-            } else {
-                setProducts('No products found**fa fa-frown-o');
+                if(res.length > 0){
+                    setProducts(res);
+                } else {
+                    setProducts('No products found**fa fa-frown-o');
+                }
+                setIsLoading(false)
             }
+            requestData()
             
-           /*  const newResult = res.items.filter(item => ( item.volumeInfo.hasOwnProperty('imageLinks') &&  item.saleInfo.hasOwnProperty('listPrice') ) );
-            setProducts(newResult); */
-            setIsLoading(false);
         } catch(error) {
-            setProducts('An error occurred in the request**fa fa-plug'); 
+            setProducts('An error occurred in the request**fa fa-plug');
         }
-    }, [location]);
+    }, [location]); 
 
     return (
         <>

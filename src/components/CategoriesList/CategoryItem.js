@@ -5,7 +5,7 @@ const Category = ({cat}) => {
 
     let history = useHistory();
 
-    const {title, slug} = cat; 
+    const {name, slug} = cat; 
 
     const openCat = (catUrl) => {
         history.push({
@@ -18,7 +18,7 @@ const Category = ({cat}) => {
         <a 
             onClick={() => openCat(slug)}
         >
-            {title}
+            {name}
         </a>
     )
 }

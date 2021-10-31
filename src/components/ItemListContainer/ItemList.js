@@ -2,14 +2,9 @@ import React from 'react';
 import Item from './Item';
 
 const Product = ({product}) => {
-    let { volumeInfo, id } = product;
-    
-    let title  = volumeInfo.title;
-    let author = volumeInfo.authors ? volumeInfo.authors[0] : 'Unknow';
-    let image    = volumeInfo.imageLinks.thumbnail,
-        price    = product.saleInfo.listPrice.amount,
-        desc     = volumeInfo.description,
-        currency = product.saleInfo.listPrice.currencyCode;
+    let { title, author, image, price, desc, id } = product;
+
+    let currency = 'USD';
 
     const formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',

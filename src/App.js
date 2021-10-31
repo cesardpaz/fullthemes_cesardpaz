@@ -28,7 +28,6 @@ function App() {
 
     return (
         <>
-
             <Router>
                 <CartProvider>
                     <NavBar 
@@ -83,8 +82,6 @@ function App() {
                     <Footer/>
                 </CartProvider>
             </Router>
-
-            
         </>
     );
 }
